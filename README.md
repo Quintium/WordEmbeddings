@@ -8,4 +8,6 @@ Converting words to vectors using machine learning
 - cosine similarity
 - better word selection (skip gram?)
 - better dataset (books?)
+- better setting handling
+- comments
 - docs

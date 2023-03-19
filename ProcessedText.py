@@ -23,8 +23,8 @@ class ProcessedText:
             currentWord = ""
 
     @classmethod
-    def createVocabulary(cls, processedTexts: list) -> Vocabulary:
-        vocabulary = Vocabulary.from_texts([text.wordList for text in processedTexts])
+    def createVocabulary(cls, processedTexts: list, vocabSize: int) -> Vocabulary:
+        vocabulary = Vocabulary.from_texts([text.wordList for text in processedTexts], vocabSize)
 
         for text in processedTexts:
             text.index(vocabulary)
