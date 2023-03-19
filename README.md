@@ -2,11 +2,8 @@
 Converting words to vectors using machine learning
 
 ## To-do
-- larger vocabulary (or maximum one)
-- larger dimensions
-- larger context window
-- cosine similarity
-- better word selection (skip gram?)
+- exclude word itself from context
+- check data selection
 - better dataset (books?)
 - better setting handling
 - comments

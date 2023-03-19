@@ -33,3 +33,4 @@ class ProcessedText:
 
     def index(self, vocabulary: Vocabulary):
         self.indexList = [vocabulary.index(word) for word in self.wordList]
+        del self.wordList

@@ -38,7 +38,7 @@ class Model:
         output = tf.keras.layers.Dense(vocabulary.vocabSize, activation="softmax")(hidden)
         self.model = tf.keras.Model(inputs=input, outputs=output)
 
-    def train(self, texts: list, wordPercentage: float, epochsAmount: int, contextWindowSize: int = 10):
+    def train(self, texts: list, vocabulary: Vocabulary, wordPercentage: float, epochsAmount: int, contextWindowSize: int = 10):
         inputs = []
         outputs = []
 
@@ -51,7 +51,7 @@ class Model:
                 outputs.append(text.indexList[randint(start, end)])
 
         data = np.array([inputs, outputs])
-        trainGen = DataGen(data, batch_size=32, shuffle=True)
+        trainGen = DataGen(data, vocabulary.vocabSize, batch_size=32, shuffle=True)
 
         self.model.compile(optimizer="adam", loss="categorical_crossentropy")
         self.model.fit(trainGen, epochs=epochsAmount)

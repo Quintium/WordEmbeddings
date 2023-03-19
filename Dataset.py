@@ -9,9 +9,9 @@ class Dataset:
     def chooseText(self) -> str:
         pass
 
-    def createTexts(self, n: int) -> tuple:
+    def createTexts(self, n: int, vocabSize: int) -> tuple:
         texts = [ProcessedText(self.chooseText()) for i in range(n)]
-        vocabulary = ProcessedText.createVocabulary(texts)
+        vocabulary = ProcessedText.createVocabulary(texts, vocabSize)
         return texts, vocabulary
 
 class WikipediaEN(Dataset):
